@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fresh Veggie Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<script src="script.js"></script>
+<body>
+
+<header>
+  <h1>MY STORE</h1>
+</header>
+
+<main class="container">
+
+  <!-- PRODUCTS -->
+  <section class="products">
+
+    <!-- Fruits -->
+    <div class="product-card">
+      <img src="D:\web\applee.jpg">
+      <h3>Apple</h3>
+      <p class="price">₹120 / kg</p>
+      <button onclick="addToCart(1,'Apple',120)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="D:\web\banana1.jpg">
+      <h3>Banana</h3>
+      <p class="price">₹40 / dozen</p>
+      <button onclick="addToCart(2,'Banana',40)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="D:\web\Oranges.webp">
+      <h3>Orange</h3>
+      <p class="price">₹80 / kg</p>
+      <button onclick="addToCart(3,'Orange',80)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="D:\web\mango.jpg">
+      <h3>Mango</h3>
+      <p class="price">₹150 / kg</p>
+      <button onclick="addToCart(4,'Mango',150)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="D:\web\grapes.jpg">
+      <h3>Grapes</h3>
+      <p class="price">₹90 / kg</p>
+      <button onclick="addToCart(5,'Grapes',90)">Add to Cart</button>
+    </div>
+
+    <!-- Vegetables -->
+    <div class="product-card">
+      <img src="D:\web\tomato.avif">
+      <h3>Tomato</h3>
+      <p class="price">₹30 / kg</p>
+      <button onclick="addToCart(6,'Tomato',30)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="D:\web\onion.webp">
+      <h3>Onion</h3>
+      <p class="price">₹35 / kg</p>
+      <button onclick="addToCart(7,'Onion',35)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="D:\web\carrot.webp">
+      <h3>Carrot</h3>
+      <p class="price">₹40 / kg</p>
+      <button onclick="addToCart(8,'Carrot',40)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="D:\web\cabbage.jpg">
+      <h3>Cabbage</h3>
+      <p class="price">₹30 / piece</p>
+      <button onclick="addToCart(9,'Cabbage',30)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="D:\web\cauliflower.webp">
+      <h3>Cauliflower</h3>
+      <p class="price">₹35 / piece</p>
+      <button onclick="addToCart(10,'Cauliflower',35)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="D:\web\brinjal.webp">
+      <h3>Brinjal</h3>
+      <p class="price">₹45 / kg</p>
+      <button onclick="addToCart(11,'Brinjal',45)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="D:\web\beans.jpg">
+      <h3>Beans</h3>
+      <p class="price">₹60 / kg</p>
+      <button onclick="addToCart(12,'Beans',60)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="D:\web\spinach.jpg">
+      <h3>Spinach</h3>
+      <p class="price">₹20 / bunch</p>
+      <button onclick="addToCart(13,'Spinach',20)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="D:\web\papaya.jpg">
+      <h3>Papaya</h3>
+      <p class="price">₹40 / piece</p>
+      <button onclick="addToCart(14,'Papaya',40)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="D:\web\watermelon.jpg">
+      <h3>Watermelon</h3>
+      <p class="price">₹50 / piece</p>
+      <button onclick="addToCart(15,'Watermelon',50)">Add to Cart</button>
+    </div>
+
+  </section>
+
+  <!-- CART -->
+  <section class="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <h3 id="total">Total: ₹0</h3>
+    <button id="order-btn" onclick="placeOrder()">Place Order</button>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f6f8;
+}
+
+header {
+  background: #2e7d32;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  margin: 10px 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.product-card button {
+  margin: 10px 0 15px;
+  padding: 10px 15px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.qty-btn {
+  background: orange;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#order-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background: orange;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}</style>
+</html>
